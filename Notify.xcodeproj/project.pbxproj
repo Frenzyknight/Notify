@@ -23,6 +23,9 @@
 		09748E7629C46CD7003FA7A1 /* PrivateNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09748E7529C46CD7003FA7A1 /* PrivateNotesView.swift */; };
 		09748E7B29C46D98003FA7A1 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09748E7A29C46D98003FA7A1 /* NotesViewModel.swift */; };
 		0994264D29C4A807007696F3 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0994264C29C4A807007696F3 /* NoteView.swift */; };
+		0994264F29C4B161007696F3 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0994264E29C4B161007696F3 /* SignInView.swift */; };
+		0994265529C4B755007696F3 /* NotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0994265429C4B755007696F3 /* NotesModel.swift */; };
+		0994265829C4BA30007696F3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0994265729C4BA30007696F3 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		09748E7529C46CD7003FA7A1 /* PrivateNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateNotesView.swift; sourceTree = "<group>"; };
 		09748E7A29C46D98003FA7A1 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		0994264C29C4A807007696F3 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		0994264E29C4B161007696F3 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		0994265429C4B755007696F3 /* NotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModel.swift; sourceTree = "<group>"; };
+		0994265729C4BA30007696F3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				09748E5229C242E6003FA7A1 /* NotifyApp.swift */,
-				09748E6F29C327B0003FA7A1 /* AuthViewModel.swift */,
-				09748E7A29C46D98003FA7A1 /* NotesViewModel.swift */,
+				09748E5429C242E6003FA7A1 /* ContentView.swift */,
+				0994265929C4BA44007696F3 /* Models */,
+				0994265629C4B769007696F3 /* View Models */,
 				09748E7729C46D12003FA7A1 /* Views */,
 				09748E5629C242E7003FA7A1 /* Assets.xcassets */,
 				09748E6429C31E5A003FA7A1 /* GoogleService-Info.plist */,
@@ -97,14 +104,48 @@
 		09748E7729C46D12003FA7A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				09748E5429C242E6003FA7A1 /* ContentView.swift */,
-				09748E6229C25BBD003FA7A1 /* SignUpView.swift */,
+				0994265029C4B660007696F3 /* Auth Views */,
 				09748E7129C45A55003FA7A1 /* HomeView.swift */,
+				0994265129C4B680007696F3 /* Notes Views */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0994265029C4B660007696F3 /* Auth Views */ = {
+			isa = PBXGroup;
+			children = (
+				0994264E29C4B161007696F3 /* SignInView.swift */,
+				09748E6229C25BBD003FA7A1 /* SignUpView.swift */,
+			);
+			path = "Auth Views";
+			sourceTree = "<group>";
+		};
+		0994265129C4B680007696F3 /* Notes Views */ = {
+			isa = PBXGroup;
+			children = (
 				09748E7329C46CC6003FA7A1 /* SharedNotesView.swift */,
 				09748E7529C46CD7003FA7A1 /* PrivateNotesView.swift */,
 				0994264C29C4A807007696F3 /* NoteView.swift */,
 			);
-			path = Views;
+			path = "Notes Views";
+			sourceTree = "<group>";
+		};
+		0994265629C4B769007696F3 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				09748E6F29C327B0003FA7A1 /* AuthViewModel.swift */,
+				09748E7A29C46D98003FA7A1 /* NotesViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		0994265929C4BA44007696F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0994265729C4BA30007696F3 /* UserModel.swift */,
+				0994265429C4B755007696F3 /* NotesModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,12 +230,15 @@
 			files = (
 				09748E5529C242E6003FA7A1 /* ContentView.swift in Sources */,
 				09748E7429C46CC6003FA7A1 /* SharedNotesView.swift in Sources */,
+				0994265529C4B755007696F3 /* NotesModel.swift in Sources */,
 				09748E5329C242E6003FA7A1 /* NotifyApp.swift in Sources */,
 				09748E7B29C46D98003FA7A1 /* NotesViewModel.swift in Sources */,
+				0994264F29C4B161007696F3 /* SignInView.swift in Sources */,
 				09748E7629C46CD7003FA7A1 /* PrivateNotesView.swift in Sources */,
 				09748E7029C327B0003FA7A1 /* AuthViewModel.swift in Sources */,
 				09748E7229C45A55003FA7A1 /* HomeView.swift in Sources */,
 				09748E6329C25BBD003FA7A1 /* SignUpView.swift in Sources */,
+				0994265829C4BA30007696F3 /* UserModel.swift in Sources */,
 				0994264D29C4A807007696F3 /* NoteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

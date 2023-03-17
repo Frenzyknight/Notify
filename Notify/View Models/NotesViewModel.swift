@@ -7,6 +7,6 @@
 
 import SwiftUI
 import Firebase
+import Firebase
 class NotesViewModel: ObservableObject {
-    let db = Firestore.firestore()
 }

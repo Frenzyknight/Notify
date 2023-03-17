@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignUpView: View {
-    let appViewModel = AuthViewModel()
+    @ObservedObject var authViewModel: AuthViewModel
     @State private var fullName = ""
     @State private var pass = ""
     @State private var confirmPass = ""
@@ -46,7 +46,7 @@ struct SignUpView: View {
                         .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1)))
                     Button("Submit") {
                         print("Button Clicked")
-                        appViewModel.signUp(email: email, password: pass, phone: phoneNum, fullname: fullName)
+                        authViewModel.signUp(email: email, password: pass, phone: phoneNum, fullname: fullName)
                     }
                     .bold()
                     .padding()
@@ -69,6 +69,6 @@ struct SignUpView: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        SignUpView(authViewModel: AuthViewModel())
     }
 }

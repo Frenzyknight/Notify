@@ -23,7 +23,7 @@ class AuthViewModel: ObservableObject {
         }
     }
     func signUp(email: String, password: String, phone: String, fullname: String) {
-        let currentUser = auth.currentUser?.uid
+        //let currentUser = auth.currentUser?.uid
         auth.createUser(withEmail: email, password: password) { result, error in
             guard result != nil, error == nil else {
                 return
@@ -31,5 +31,16 @@ class AuthViewModel: ObservableObject {
             //Success
         }
         
+    }
+    func listenToAuthState() {
+        auth.addStateDidChangeListener { [weak self] _, user in
+            guard let self = self else {
+                return
+            }
+            self.user = user
+        }
+    }
+    func signOut() {
+        try? auth.signOut()
     }
 }

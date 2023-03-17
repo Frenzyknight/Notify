@@ -8,21 +8,14 @@
 import SwiftUI
 import Firebase
 import FirebaseAuth
-import FirebaseCore
 
 @main
 struct NotifyApp: App {
-    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
-//            let user = Auth.auth().currentUser
-//            if user?.uid == nil {
-//                ContentView()
-//            } else {
-//                SwiftUIView()
-//            }
-            SignUpView()
+            ContentView()
+                .environmentObject(AuthViewModel())
         }
     }
 }
