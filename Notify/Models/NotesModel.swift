@@ -11,4 +11,5 @@ struct Notes: Identifiable {
     var id: String
     var title: String
     var body: String
+    var ispublic: Bool
 }

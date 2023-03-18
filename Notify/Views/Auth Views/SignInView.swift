@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SignInView: View {
+    @ObservedObject var authViewModel: AuthViewModel
     @State private var email = ""
     @State private var pass = ""
     var body: some View {
@@ -29,6 +30,7 @@ struct SignInView: View {
                         .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1)))
                     Button {
                         print("Button Clicked")
+                        authViewModel.signIn(email: email, password: pass)
                     } label: {
                          Text("Submit")
                             .bold()
@@ -50,14 +52,18 @@ struct SignInView: View {
                 Spacer()
                 Spacer()
                 Spacer(minLength: 200)
-                }
             }
         }
-
+        .alert("Wrong Password/Email"isPresented: $authViewModel.signInSuccessfull) {
+            Button("Retry", role: .cancel) {
+                //something like all variables can be cleared
+            }
+        }
+    }
 }
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView()
+        SignInView(authViewModel: AuthViewModel())
     }
 }

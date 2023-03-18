@@ -13,7 +13,7 @@ struct PrivateNotesView: View {
         ZStack {
             NavigationStack {
                 List(sampleDate, id: \.self) { data in
-                    NavigationLink(data, destination: HomeView())
+                    NavigationLink(data, destination: SharedNotesView())
                 }
                 .navigationTitle("Personal Notes")
                 .toolbar {
@@ -21,7 +21,6 @@ struct PrivateNotesView: View {
                         //
                     } label: {
                         Image(systemName: "pencil.tip.crop.circle.badge.plus")
-                            .foregroundColor(.pink)
                     }
                 }
             }

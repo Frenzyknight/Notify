@@ -11,14 +11,17 @@ import FirebaseAuth
 class AuthViewModel: ObservableObject {
     @Published var user: User?
     let auth = Auth.auth()
+    var signInSuccessfull = true
     var isSigned: Bool {
         return auth.currentUser != nil
     }
     func signIn(email: String, password: String) {
         auth.signIn(withEmail: email, password: password) { result, error in
             guard result != nil, error == nil else {
+                self.signInSuccessfull.toggle()
                 return
             }
+            print("Login Successfull")
             //Success
         }
     }
@@ -26,9 +29,11 @@ class AuthViewModel: ObservableObject {
         //let currentUser = auth.currentUser?.uid
         auth.createUser(withEmail: email, password: password) { result, error in
             guard result != nil, error == nil else {
+                self.signInSuccessfull.toggle()
                 return
             }
             //Success
+            print("Login Successfull")
         }
         
     }
